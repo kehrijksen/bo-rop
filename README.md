@@ -48,9 +48,9 @@ Using `python2` we can generate an input and pipe it to the program, resulting i
 We can see the EIP being overwritten to `0x41414141 ('AAAA')`
 
 
-In order to control the EIP we must first find what offset it is in our overflowed buffer, we create a recognizable pattern:
+In order to control the EIP we must first find what offset it is in our overflowed buffer, we create a recognizable pattern and output it to `pattern.txt`:
 
-`gdb-peda$ pattern create 400`
+`gdb-peda$ pattern create 400 pattern.txt`
 
 > AAA%AAsAABAA$AAnAACAA-AA(AADAA;AA)AAEAAaAA0AAFAAbAA1AAGAAcAA2AAHAAdAA3AAIAAeAA4AAJAAfAA5AAKAAgAA6AALAAhAA7AAMAAiAA8AANAAjAA9AAOAAkAAPAAlAAQAAmAARAAoAASAApAATAAqAAUAArAAVAAtAAWAAuAAXAAvAAYAAwAAZAAxAAyAAzA%%A%sA%BA%$A%nA%CA%-A%(A%DA%;A%)A%EA%aA%0A%FA%bA%1A%GA%cA%2A%HA%dA%3A%IA%eA%4A%JA%fA%5A%KA%gA%6A%LA%hA%7A%MA%iA%8A%NA%jA%9A%OA%kA%PA%lA%QA%mA%RA%oA%SA%pA%TA%qA%UA%rA%VA%tA%WA%uA%XA%vA%YA%wA%ZA%xA%y
 
